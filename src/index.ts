@@ -11,3 +11,4 @@ let mystery:unknown = "hello world";
 
 
 const numChars = (mystery as string).length
+
