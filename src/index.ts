@@ -3,13 +3,16 @@
 //lo pongo al final de una expresion que podria ser null
 const btn = document.getElementById("btn")! as HTMLButtonElement;
 const input = document.getElementById("todoinput")! as HTMLInputElement;
+const form = document.querySelector("form")!;
 
+form.addEventListener("submit", function() {
+    console.log("submitted")
+})
 
-
-btn?.addEventListener("click", function() {
-    alert(input.value);
-    input.value = "";
-});
+// btn?.addEventListener("click", function() {
+//     alert(input.value);
+//     input.value = "";
+// });
 
 // let mystery:unknown = "hello world";
 

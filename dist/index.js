@@ -4,9 +4,13 @@
 //lo pongo al final de una expresion que podria ser null
 var btn = document.getElementById("btn");
 var input = document.getElementById("todoinput");
-btn === null || btn === void 0 ? void 0 : btn.addEventListener("click", function () {
-    alert(input.value);
-    input.value = "";
+var form = document.querySelector("form");
+form.addEventListener("submit", function () {
+    console.log("submitted");
 });
+// btn?.addEventListener("click", function() {
+//     alert(input.value);
+//     input.value = "";
+// });
 // let mystery:unknown = "hello world";
 // const numChars = (mystery as string).length
