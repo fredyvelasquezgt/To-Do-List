@@ -5,11 +5,15 @@
 var btn = document.getElementById("btn");
 var input = document.getElementById("todoinput");
 var form = document.querySelector("form");
+var list = document.getElementById("todolist");
 form.addEventListener("submit", function (e) {
     e.preventDefault();
     console.log("submitted");
-    var newTodo = input.value;
+    var newTodoText = input.value;
     var newLI = document.createElement("LI");
+    newLI.append(newTodoText);
+    list.append(newLI);
+    input.value = "";
 });
 // btn?.addEventListener("click", function() {
 //     alert(input.value);

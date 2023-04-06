@@ -4,14 +4,17 @@
 const btn = document.getElementById("btn")! as HTMLButtonElement;
 const input = document.getElementById("todoinput")! as HTMLInputElement;
 const form = document.querySelector("form")!;
-
+const list = document.getElementById("todolist")!;
 
 
 form.addEventListener("submit", function(e) {
     e.preventDefault();
     console.log("submitted")
-    const newTodo = input.value;
+    const newTodoText = input.value;
     const newLI = document.createElement("LI");
+    newLI.append(newTodoText);
+    list.append(newLI);
+    input.value = "";
 })
 
 // btn?.addEventListener("click", function() {
