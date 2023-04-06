@@ -5,7 +5,8 @@
 var btn = document.getElementById("btn");
 var input = document.getElementById("todoinput");
 var form = document.querySelector("form");
-form.addEventListener("submit", function () {
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
     console.log("submitted");
 });
 // btn?.addEventListener("click", function() {
