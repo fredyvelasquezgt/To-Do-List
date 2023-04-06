@@ -7,3 +7,7 @@ btn?.addEventListener("click", function() {
     alert("CLICKED!")
 });
 
+let mystery:unknown = "hello world";
+
+
+const numChars = (mystery as string).length
