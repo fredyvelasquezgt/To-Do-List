@@ -8,6 +8,8 @@ var form = document.querySelector("form");
 form.addEventListener("submit", function (e) {
     e.preventDefault();
     console.log("submitted");
+    var newTodo = input.value;
+    var newLI = document.createElement("LI");
 });
 // btn?.addEventListener("click", function() {
 //     alert(input.value);

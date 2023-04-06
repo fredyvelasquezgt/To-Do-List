@@ -10,6 +10,8 @@ const form = document.querySelector("form")!;
 form.addEventListener("submit", function(e) {
     e.preventDefault();
     console.log("submitted")
+    const newTodo = input.value;
+    const newLI = document.createElement("LI");
 })
 
 // btn?.addEventListener("click", function() {
