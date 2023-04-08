@@ -6,9 +6,18 @@ var btn = document.getElementById("btn");
 var input = document.getElementById("todoinput");
 var form = document.querySelector("form");
 var list = document.getElementById("todolist");
+var todos = [];
 form.addEventListener("submit", function (e) {
     e.preventDefault();
-    console.log("submitted");
+    var newTodo = {
+        text: input.value,
+        completed: false,
+    };
+    createTodo(newTodo);
+    todos.push(newTodo);
+    input.value = "";
+});
+function createTodo(todo) {
     var newTodoText = input.value;
     var newLI = document.createElement("li");
     var checkbox = document.createElement("input");
@@ -16,8 +25,7 @@ form.addEventListener("submit", function (e) {
     newLI.append(newTodoText);
     newLI.append(checkbox);
     list.append(newLI);
-    input.value = "";
-});
+}
 // btn?.addEventListener("click", function() {
 //     alert(input.value);
 //     input.value = "";
