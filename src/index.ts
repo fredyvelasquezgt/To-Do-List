@@ -18,6 +18,10 @@ function readTodos(): Todo[] {
     return JSON.parse(todosJSON);
 }
 
+function saveTodos() {
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
+
 const todos:Todo[] = readTodos();
 todos.forEach(createTodo)
 
@@ -41,7 +45,7 @@ function createTodo(todo: Todo) {
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox"
     checkbox.addEventListener("change", function() {
-        console.log('clicked')
+        todo.completed = checkbox.checked;
     })
 
 
