@@ -10,8 +10,11 @@ form.addEventListener("submit", function (e) {
     e.preventDefault();
     console.log("submitted");
     var newTodoText = input.value;
-    var newLI = document.createElement("LI");
+    var newLI = document.createElement("li");
+    var checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
     newLI.append(newTodoText);
+    newLI.append(checkbox);
     list.append(newLI);
     input.value = "";
 });
