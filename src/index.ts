@@ -14,6 +14,7 @@ form.addEventListener("submit", function(e) {
     const newLI = document.createElement("LI");
     newLI.append(newTodoText);
     list.append(newLI);
+    
     input.value = "";
 })
 
