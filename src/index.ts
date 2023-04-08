@@ -12,6 +12,12 @@ const input = document.getElementById("todoinput")! as HTMLInputElement;
 const form = document.querySelector("form")!;
 const list = document.getElementById("todolist")!;
 
+function readTodos() {
+    const todosJSON = localStorage.getItem("todos");
+    if(todosJSON == null) return [];
+    return JSON.parse(todosJSON);
+}
+
 const todos:Todo[] = [];
 
 
@@ -23,7 +29,9 @@ form.addEventListener("submit", function(e) {
     };
     createTodo(newTodo)
     todos.push(newTodo);
-    
+
+    localStorage.setItem("todos", JSON.stringify(todos));
+
     input.value = "";
 })
 

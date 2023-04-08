@@ -6,6 +6,12 @@ var btn = document.getElementById("btn");
 var input = document.getElementById("todoinput");
 var form = document.querySelector("form");
 var list = document.getElementById("todolist");
+function readTodos() {
+    var todosJSON = localStorage.getItem("todos");
+    if (todosJSON == null)
+        return [];
+    return JSON.parse(todosJSON);
+}
 var todos = [];
 form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -15,6 +21,7 @@ form.addEventListener("submit", function (e) {
     };
     createTodo(newTodo);
     todos.push(newTodo);
+    localStorage.setItem("todos", JSON.stringify(todos));
     input.value = "";
 });
 function createTodo(todo) {
