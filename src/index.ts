@@ -40,6 +40,12 @@ function createTodo(todo: Todo) {
     const newLI = document.createElement("li");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox"
+    checkbox.addEventListener("change", function() {
+        console.log('clicked')
+    })
+
+
+
     newLI.append(todo.text);
     newLI.append(checkbox);
     list.append(newLI);

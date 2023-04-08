@@ -29,6 +29,9 @@ function createTodo(todo) {
     var newLI = document.createElement("li");
     var checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.addEventListener("change", function () {
+        console.log('clicked');
+    });
     newLI.append(todo.text);
     newLI.append(checkbox);
     list.append(newLI);
