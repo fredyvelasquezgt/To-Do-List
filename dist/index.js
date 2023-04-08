@@ -12,7 +12,8 @@ function readTodos() {
         return [];
     return JSON.parse(todosJSON);
 }
-var todos = [];
+var todos = readTodos();
+todos.forEach(createTodo);
 form.addEventListener("submit", function (e) {
     e.preventDefault();
     var newTodo = {

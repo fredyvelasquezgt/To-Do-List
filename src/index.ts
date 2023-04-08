@@ -12,13 +12,14 @@ const input = document.getElementById("todoinput")! as HTMLInputElement;
 const form = document.querySelector("form")!;
 const list = document.getElementById("todolist")!;
 
-function readTodos() {
+function readTodos(): Todo[] {
     const todosJSON = localStorage.getItem("todos");
     if(todosJSON == null) return [];
     return JSON.parse(todosJSON);
 }
 
-const todos:Todo[] = [];
+const todos:Todo[] = readTodos();
+todos.forEach(createTodo)
 
 
 form.addEventListener("submit", function(e) {
