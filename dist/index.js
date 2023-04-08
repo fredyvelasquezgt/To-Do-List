@@ -18,11 +18,10 @@ form.addEventListener("submit", function (e) {
     input.value = "";
 });
 function createTodo(todo) {
-    var newTodoText = input.value;
     var newLI = document.createElement("li");
     var checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    newLI.append(newTodoText);
+    newLI.append(todo.text);
     newLI.append(checkbox);
     list.append(newLI);
 }
